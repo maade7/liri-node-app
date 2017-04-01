@@ -64,7 +64,7 @@ function callSwitch() {
 
 function movieThis() {
     if (typeof value != 'undefined') {
-        omdb()
+        omdb();
     } else {
 
         inquirer.prompt([
@@ -94,7 +94,7 @@ function movieThis() {
                 }
                 // console.log(value);
 
-                omdb()
+                omdb();
             } else {
 
                 console.log("");
@@ -122,7 +122,7 @@ function omdb() {
             //     console.log(key + ": ", data[key]);
             // });
 
-            var movie = ("==============================================" + '\n' +
+            var movie = ("----------------------------------------------" + '\n' +
                 "Title: " + data.Title + '\n' +
                 "Year: " + data.Year + '\n' +
                 "imdbRating: " + data.imdbRating + '\n' +
@@ -134,7 +134,7 @@ function omdb() {
                 "==============================================");
             log(movie);
         }).catch(function(err) {
-            console.log("omdb error");
+            console.log(err);
         });
 }
 
@@ -162,7 +162,7 @@ function myTweets() {
 
 function spotifyThisSong() {
     if (typeof value != 'undefined') {
-        spotify()
+        spotify();
     } else {
 
         inquirer.prompt([
@@ -190,8 +190,8 @@ function spotifyThisSong() {
 
                     value = 'The Sign';
                 }
-                console.log(value);
-                spotify()
+                // console.log(value);
+                spotify();
 
             } else {
 
@@ -216,7 +216,7 @@ function spotify() {
         .then(function(data) {
             // var myArray = process.argv.slice(2, process.argv.length);
             // console.log(JSON.stringify(data, null, ' '));
-            var song = ("==============================================" + '\n' +
+            var song = ("----------------------------------------------" + '\n' +
                 "Artist: " + data.tracks.items[0].artists[0].name + '\n' +
                 "Song Name: " + data.tracks.items[0].name + '\n' +
                 "preview_url: " + data.tracks.items[0].preview_url + '\n' +
@@ -224,7 +224,7 @@ function spotify() {
                 "==============================================");
             log(song);
         }).catch(function(err) {
-            console.log("spotify error");
+            console.log(err);
         });
 }
 
@@ -245,6 +245,16 @@ function doWhatItSays() {
             askUser();
         }
 
+    });
+}
+
+function log(x) {
+    fs.appendFile("log.txt", x, function(err) {
+        if (err) {
+            console.log(err);
+        } else {
+            console.log(x);
+        }
     });
 }
 
