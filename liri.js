@@ -190,12 +190,12 @@ function twitter() {
         data = JSON.parse(data);
         var tweets = ("----------------------------------------------" +
         '\n');
-        for (var i = 0; i < data.length; i++) {
+        for (var i = 0; i < data.length && i < 20; i++) {
             if (data[i]['text']) {
                 // console.log(data[i]['text']);
                 var time = data[i]['created_at'].split('+');
                 var year = time[1].split(' ');
-                var tweet = ("Tweet: " + data[i]['text'] + '\n' + "Posted: " + time[0]+ year[1] + '\n'  + '\n');
+                var tweet = ("Tweet: " + data[i]['text'] + '\n' + "Posted: " + time[0] + year[1] + '\n' + '\n');
                 tweets += tweet;
             }
 
