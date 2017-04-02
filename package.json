@@ -5,6 +5,7 @@
   "main": "keys.js",
   "dependencies": {
     "inquirer": "^3.0.6",
+    "oauth": "^0.9.15",
     "request": "^2.81.0",
     "request-promise": "^4.2.0",
     "util": "^0.10.3"
