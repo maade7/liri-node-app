@@ -122,7 +122,7 @@ function omdb() {
 
         var movie = ("----------------------------------------------" +
         '\n' +
-        "Title: " + data.Title + '\n' + "Year: " + data.Year + '\n' + "imdbRating: " + data.imdbRating + '\n' + "Country: " + data.Country + '\n' + "Language: " + data.Language + '\n' + "Plot: " + data.Plot + '\n' + "Actors: " + data.Actors + '\n' + "Rotten Tomatoes: " + data.Ratings[1].Value + '\n' + "==============================================");
+        "Title: " + data.Title + '\n' + "Year: " + data.Year + '\n' + "imdbRating: " + data.imdbRating + '\n' + "Country: " + data.Country + '\n' + "Language: " + data.Language + '\n' + "Plot: " + data.Plot + '\n' + "Actors: " + data.Actors + '\n' + "Rotten Tomatoes: " + data.Ratings[1].Value + '\n' + "=============================================="+ '\n');
         log(movie);
     }).catch(function(err) {
         console.log(err);
@@ -200,7 +200,7 @@ function twitter() {
             }
 
         }
-        tweets += ("==============================================");
+        tweets += ("=============================================="+ '\n');
         log(tweets);
     });
 }
@@ -261,7 +261,7 @@ function spotify() {
         // console.log(JSON.stringify(data, null, ' '));
         var song = ("----------------------------------------------" +
         '\n' +
-        "Artist: " + data.tracks.items[0].artists[0].name + '\n' + "Song Name: " + data.tracks.items[0].name + '\n' + "preview_url: " + data.tracks.items[0].preview_url + '\n' + "Album: " + data.tracks.items[0].album.name + '\n' + "==============================================");
+        "Artist: " + data.tracks.items[0].artists[0].name + '\n' + "Song Name: " + data.tracks.items[0].name + '\n' + "preview_url: " + data.tracks.items[0].preview_url + '\n' + "Album: " + data.tracks.items[0].album.name + '\n' + "=============================================="+ '\n');
         log(song);
     }).catch(function(err) {
         console.log(err);
