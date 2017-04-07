@@ -1,7 +1,7 @@
-var request = require("request");
+// var request = require("request");
+// var util = require('util');
 var rp = require("request-promise");
 var fs = require("fs");
-var util = require('util');
 var inquirer = require("inquirer");
 var OAuth = require('OAuth');
 var keys = require("./keys.js");
@@ -157,7 +157,7 @@ function myTweets() {
             if (user.confirm) {
 
                 if (value == '') {
-                    value = 'maade117';
+                    value = 'realDonaldTrump';
                 }
                 // console.log(value);
 
